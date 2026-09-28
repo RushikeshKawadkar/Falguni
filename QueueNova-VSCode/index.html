@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>QueueNova - OPD Token &amp; Queue System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ================= HOME / ROLE SELECT ================= -->
+<section class="home" id="home">
+  <div class="home-in">
+    <div class="logo">QueueNova<small>OPD Token &amp; Queue Management System</small></div>
+
+    <div id="rolePick">
+      <p style="font-size:19px;font-weight:600;margin:26px 0 0">Who are you?</p>
+      <div class="roles">
+        <button class="role r-patient" onclick="gate('patient')"><span class="ic">🧑</span><span><b>Patient</b><span>Get a token and track the queue</span></span></button>
+        <button class="role r-nurse" onclick="gate('nurse')"><span class="ic">👩‍⚕️</span><span><b>Nurse</b><span>Run the queue, call tokens</span></span></button>
+        <button class="role r-doctor" onclick="gate('doctor')"><span class="ic">🩺</span><span><b>Doctor</b><span>See patients, record consultation</span></span></button>
+        <button class="role r-admin" onclick="gate('admin')"><span class="ic">🏥</span><span><b>Admin</b><span>Manage staff and view reports</span></span></button>
+      </div>
+    </div>
+
+    <div id="loginBox" style="display:none;text-align:left"></div>
+  </div>
+</section>
+
+<!-- ================= APP ================= -->
+<div id="app" style="display:none">
+  <div class="bar"><div class="in">
+    <div><div class="nm" id="barName"></div><div class="rl" id="barRole"></div></div>
+    <button onclick="signOut()">Sign Out</button>
+  </div></div>
+  <div class="wrap" id="view"></div>
+  <nav class="tabs" id="tabs"></nav>
+</div>
+
+<div class="toasts" id="toasts"></div>
+<div class="modal" id="modal" onclick="if(event.target===this)closeSheet()"><div class="sheet" id="sheet"></div></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
